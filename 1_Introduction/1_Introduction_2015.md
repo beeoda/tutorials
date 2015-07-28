@@ -112,7 +112,7 @@ We assume that you are not familiar with any of these tools and one of the aims 
 
 3.  You can extract the data using either the *Caja* file browser or *MATE Terminal*: to use *Caja*, right click the tarball &gt; *Extract to…*; this will open the Extract dialog window &gt; navigate to “1\_extract” &gt; click *Create Folder* to create a directory with the name of the Landsat tarball &gt; click *Extract*. It should look like this in Caja:
 
-![](media/image10.png)
+![](media/image12.png)
 
 > with the contents of the subdirectory in “1\_extract” (in this example “LE70120312001161”) containing all of individual Landsat bands. In MATE terminal, you will need navigate to “1\_extract”, create the image directory and type tar -xvf \[tarball\] to extract the tarball (a very useful trick when using the terminal is to type the first letter of directories or files and hit the tab key to autocomplete, this is especially helpful when completing long filenames like that of the tarball):
 >
@@ -239,13 +239,13 @@ We assume that you are not familiar with any of these tools and one of the aims 
 
 1.  The basic syntax is:
 
-> image\_composites.py -algo \[algorithm\] -o \[output\_name\] \[image1\] \[image2\] \[image3\] \[etc\]
+> image\_composites.py --algo \[algorithm\] \[image1\] \[image2\] \[image3\] \[etc\] \[output\_name\]
 
 1.  Instead of writing every image that you wish to composite, an alternative is to give it a folder and file pattern, using asterisks to in place of the characters that differ between the files.
 
 2.  To make a composite of ‘image1.tif’ ‘image2.tif’ and ‘image3.tif’ (within the folders image1, image2 and image3) with a ‘Maximum NDVI’ algorithm, use the following command:
 
-> image\_composites.py -algo maxNDVI -o image\_composite.tif i\*/i\*tif
+> image\_composites.py --algo maxNDVI i\*/i\*tif image\_composite.tif
 
 1.  The following algorithms are implemented in the script: maxNDVI, maxNIR, ZheZhu (maximum NIR / Blue), medianNDVI, minBlue.
 
